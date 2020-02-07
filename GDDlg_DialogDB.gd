@@ -140,11 +140,11 @@ func parse_dialog_attributes(dialog_attributes: Dictionary) -> bool:
 func parse_dialog_options(dialog_options: Array) -> bool:
 	for i in range(0, dialog_options.size()):
 		var dialog_option = dialog_options[i];
-		
+
 		if (typeof(dialog_option) != TYPE_DICTIONARY):
 			print("      Malformed json! Option [, i, ] is not map!");
 			return false;
-			
+
 		var option_attributes = dialog_option.get("attributes", {});
 		
 		if (typeof(option_attributes) != TYPE_DICTIONARY):
@@ -170,7 +170,7 @@ func parse_dialog_options(dialog_options: Array) -> bool:
 				print("      Malformed json! Option [", i, "] -> Condition [", j, "]!");
 
 	return true;
-	
+
 func parse_option_attributes(option_attributes: Dictionary) -> bool:
 	for i in option_attributes.keys():
 		var attribute_obj = get_option_attribute_by_id(i);
